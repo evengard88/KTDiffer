@@ -7,7 +7,7 @@ import javax.enterprise.context.ApplicationScoped
 @ApplicationScoped
 class TelegramBotRoute : RouteBuilder() {
 
-    override fun cosnfigure() {
+    override fun configure() {
         from("telegram:bots/{{botToken}}")
             .filter { exchange -> exchange.getIn().getBody(IncomingMessage::class.java)?.text?.startsWith("/hello") == true }
             .setHeader(TelegramConstants.TELEGRAM_CHAT_ID, simple("\${body.message.chat.id}"))
