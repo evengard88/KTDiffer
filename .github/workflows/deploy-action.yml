@@ -17,11 +17,11 @@ jobs:
           java-version: '17'
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: 'Cache Maven packages'
+      - name: 'Cache Gradle packages'
         uses: actions/cache@v3.0.11
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/build.gradle.kts') }}
           restore-keys: ${{ runner.os }}-m2
       - name: 'Build'  
         run: >
