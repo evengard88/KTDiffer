@@ -25,7 +25,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: 'Build'  
         run: >
-          ./mvnw -B --file pom.xml verify -Pnative
+          ./gradlew build -Dquarkus.package.type=native
           -Dquarkus.native.additional-build-args=-H:-UseContainerSupport
 
       -
