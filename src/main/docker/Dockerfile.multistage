@@ -7,7 +7,7 @@ COPY --chown=quarkus:quarkus gradle /code/gradle
 COPY --chown=quarkus:quarkus build.gradle /code/
 COPY --chown=quarkus:quarkus settings.gradle /code/
 COPY --chown=quarkus:quarkus gradle.properties /code/
-ADD --chown=quarkus:quarkus src /code/src
+ADD src /code/src
 USER quarkus
 WORKDIR /code
 RUN ./gradlew build -Dquarkus.package.type=native
