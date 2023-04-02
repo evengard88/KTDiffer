@@ -8,10 +8,10 @@ import javax.enterprise.context.ApplicationScoped
 class TelegramBotRoute : RouteBuilder() {
 
     override fun configure() {
-        from("telegram:bots/5349970114:AAGv8AoXgDSfqHpVBH1JWOIGwnFnWHe7Q3Y")
+        from("telegram:bots")
             .filter { exchange -> exchange.getIn().getBody(IncomingMessage::class.java)?.text?.startsWith("/hello") == true }
             .setHeader(TelegramConstants.TELEGRAM_CHAT_ID, simple("\${body.message.chat.id}"))
             .setBody(simple("Hello, \${body.message.chat.firstName}!"))
-            .to("telegram:bots/5349970114:AAGv8AoXgDSfqHpVBH1JWOIGwnFnWHe7Q3Y")
+            .to("telegram:bots")
     }
 }
