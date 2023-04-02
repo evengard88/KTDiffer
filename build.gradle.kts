@@ -21,6 +21,7 @@ dependencies {
     implementation("org.apache.camel.quarkus:camel-quarkus-core")
     implementation("org.apache.camel.quarkus:camel-quarkus-kotlin")
     implementation("org.apache.camel.quarkus:camel-quarkus-bean")
+    implementation("io.quarkiverse.poi:quarkus-poi:1.0.5")
     implementation("io.quarkus:quarkus-resteasy-reactive:2.16.5.Final")
     implementation("io.quarkus:quarkus-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
