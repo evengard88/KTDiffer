@@ -10,7 +10,8 @@ public class TestResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
+    public String hello() throws InterruptedException {
+        Thread.sleep(100000);
         return "Hello RESTEasy";
     }
 }
