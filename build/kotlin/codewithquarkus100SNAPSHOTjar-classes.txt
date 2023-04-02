@@ -1,0 +1,1 @@
+/Users/ikurenkov/IdeaProjects/TelegramBotDiffer/build/classes/java/main/org/test/TestResource.class
